@@ -1,15 +1,16 @@
-const Flow = require('flow-platform-sdk');
+// const Flow = require('flow-platform-sdk');
+import { Component, Property, Port } from 'flow-platform-sdk';
 
-class Updater extends Flow.Component {
+export default class Updater extends Component {
   constructor() {
     super();
 
     this.name = 'modifier';
 
-    const value = new Flow.Property('value', 'text');
-    const propertyId = new Flow.Property('outputPropertyId', 'text');
-    const componentId = new Flow.Property('outputComponentId', 'text');
-    const outputResult = new Flow.Property('outputResult', 'object');
+    const value = new Property('value', 'text');
+    const propertyId = new Property('outputPropertyId', 'text');
+    const componentId = new Property('outputComponentId', 'text');
+    const outputResult = new Property('outputResult', 'object');
 
     value.required = true;
     propertyId.required = true;
@@ -20,8 +21,9 @@ class Updater extends Flow.Component {
     this.addProperty(propertyId);
     this.addProperty(componentId);
     
-    const result = new Flow.Port('Result');
+    const result = new Port('Result');
     result.addProperty(outputResult)
+    this.addPort(result)
 
     this.attachTask(() => {
       const port = this.getPort('Result')
@@ -37,5 +39,3 @@ class Updater extends Flow.Component {
     this.taskComplete()
   }
 }
-
-module.exports = Updater;

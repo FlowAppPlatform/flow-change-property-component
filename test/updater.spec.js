@@ -3,6 +3,13 @@ import { v4 as uuid } from 'uuid';
 import Component from '../src/updater';
 
 describe('Component tests', function() {
+  it('exists and is an instance of updater component', function() {
+    const component = new Component();
+
+    expect(component).to.exist;
+    expect(component).to.be.instanceof(Component)
+  })
+
   it('contains properties passed in', function(done) {
     const component = new Component();
     const componentId = uuid();
@@ -19,7 +26,7 @@ describe('Component tests', function() {
     component.execute();
   })
 
-  it.skip('emits the properties passsed in as output', function(done) {
+  it('emits the properties passsed in as output', function(done) {
     const component = new Component();
     const componentId = uuid();
     const propertyId = uuid();
@@ -28,12 +35,14 @@ describe('Component tests', function() {
     component.getProperty('outputPropertyId').data = propertyId;
 
     component.getPort('Result').onEmit(function() {
-      expect(component.getPort('Result').getProperty('outputResult').data.value = 'test value');
+      expect(component.getPort('Result').getProperty('outputResult').data.value).to.equal('test value');
+      expect(component.getPort('Result').getProperty('outputResult').data.propertyId).to.equal(propertyId);
+      expect(component.getPort('Result').getProperty('outputResult').data.componentId).to.equal(componentId);
 
       done()
     })
 
-    component.execute()
+    component.execute();
   })
   
 })
