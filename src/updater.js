@@ -1,4 +1,3 @@
-// const Flow = require('flow-platform-sdk');
 import { Component, Property, Port } from 'flow-platform-sdk';
 
 export default class Updater extends Component {
