@@ -7,8 +7,8 @@ describe('Component tests', function() {
     const component = new Component();
 
     expect(component).to.exist;
-    expect(component).to.be.instanceof(Component)
-  })
+    expect(component).to.be.instanceof(Component);
+  });
 
   it('contains properties passed in', function(done) {
     const component = new Component();
@@ -18,13 +18,13 @@ describe('Component tests', function() {
     component.getProperty('outputComponentId').data = componentId;
     component.getProperty('outputPropertyId').data = propertyId;
 
-    expect(component.getProperty('value').data).to.equal('test value')
-    expect(component.getProperty('outputComponentId').data).to.equal(componentId)
-    expect(component.getProperty('outputPropertyId').data).to.equal(propertyId)
-    done()
+    expect(component.getProperty('value').data).to.equal('test value');
+    expect(component.getProperty('outputComponentId').data).to.equal(componentId);
+    expect(component.getProperty('outputPropertyId').data).to.equal(propertyId);
+    done();
 
     component.execute();
-  })
+  });
 
   it('emits the properties passsed in as output', function(done) {
     const component = new Component();
@@ -39,10 +39,10 @@ describe('Component tests', function() {
       expect(component.getPort('Result').getProperty('outputResult').data.propertyId).to.equal(propertyId);
       expect(component.getPort('Result').getProperty('outputResult').data.componentId).to.equal(componentId);
 
-      done()
-    })
+      done();
+    });
 
     component.execute();
-  })
+  });
   
-})
+});

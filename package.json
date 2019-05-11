@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "lint": "eslint --fix --ignore-path .gitignore ."
   },
   "author": "",
   "license": "Apache-2.0",
@@ -16,7 +17,9 @@
     "@babel/polyfill": "^7.2.3",
     "@babel/preset-env": "^7.2.3",
     "@babel/register": "^7.0.0",
+    "babel-eslint": "^10.0.1",
     "chai": "^4.2.0",
+    "eslint": "^5.11.0",
     "mocha": "^5.2.0",
     "uuid": "^3.3.2"
   }
