@@ -21,20 +21,20 @@ export default class Updater extends Component {
     this.addProperty(componentId);
     
     const result = new Port('Result');
-    result.addProperty(outputResult)
-    this.addPort(result)
+    result.addProperty(outputResult);
+    this.addPort(result);
 
     this.attachTask(() => {
-      const port = this.getPort('Result')
+      const port = this.getPort('Result');
       port.getProperty('outputResult').data = {
         value: this.getProperty('value').data,
         propertyId: this.getProperty('outputPropertyId').data,
         componentId: this.getProperty('outputComponentId').data
-      }
+      };
 
       port.emit();
     });
 
-    this.taskComplete()
+    this.taskComplete();
   }
 }
