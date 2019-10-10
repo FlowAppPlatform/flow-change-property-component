@@ -1,0 +1,68 @@
+{
+  "flow-change-property-component": {
+    "graphComponentId": "flow-change-property-component",
+    "title": "Change Property",
+    "category": "Properties",
+    "imgSrc": "assets/images/icons/shuffle.svg",
+    "type": "graphComponent",
+    "file": "src/updater.js",
+    "executionPlatform": ["server", "client"],
+    "metadata": {
+      "icon-color": "#BF962A"
+    },
+    "ports": [
+      {
+        "id": "Result",
+        "title": "Result",
+        "description": "Changed property",
+        "color": "#427BF4",
+        "properties": [
+          {
+            "categoryName": "General",
+            "categoryDescription": "Basic settings about this port",
+            "properties": [
+              {
+                "id": "outputResult",
+                "name": "Result",
+                "type": "object",
+                "data": null,
+                "options": { "required": true }
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "properties": [
+      {
+        "categoryName": "General",
+        "categoryDescription": "Basic settings about the Change Property component",
+        "properties": [
+          {
+            "id": "value",
+            "name": "Value",
+            "type": "text",
+            "data": null,
+            "options": { "required": true }
+          },
+          {
+            "id": "outputPropertyId",
+            "name": "Output Property Id",
+            "type": "text",
+            "data": null,
+            "options": { "required": true }
+          },
+          {
+            "id": "outputComponentId",
+            "name": "Output Component Id",
+            "type": "text",
+            "data": null,
+            "options": { "required": true }
+          }
+        ]
+      }
+    ],
+    "showOnComponentsPanel": true,
+    "isDeletable": true
+  }
+}
