@@ -1,1 +1,7 @@
 node_modules/
+
+# coverage files
+.nyc_output
+
+# Desktop services store files
+*.DS_Store
