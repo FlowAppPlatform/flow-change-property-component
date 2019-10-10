@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "coverage": "nyc mocha",
+    "lint": "eslint --fix ./src ./test ./index.js"
   },
   "author": "",
   "license": "Apache-2.0",
@@ -17,7 +19,9 @@
   },
   "devDependencies": {
     "chai": "^4.2.0",
+    "eslint": "^6.5.1",
     "mocha": "^5.2.0",
+    "nyc": "^14.1.1",
     "uuid": "^3.3.2"
   }
 }
